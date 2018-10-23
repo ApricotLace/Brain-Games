@@ -4,3 +4,4 @@
 ### **CLI Application**
 
 A set of mini-games running from the console. These games are similar to what is commonly called the "Brain Games".
+## Installation
