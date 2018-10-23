@@ -22,15 +22,13 @@ const execGame = () => {
     }
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${userName}`);
       break;
     }
     console.log('Correct!');
   }
   if (counter === endGame) {
     console.log(`Congratulations, ${userName}`);
-  } else {
-    console.log(`Let's try again, ${userName}`);
   }
 };
 
