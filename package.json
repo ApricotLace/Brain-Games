@@ -1,0 +1,24 @@
+{
+  "name": "project-lvl1-s368",
+  "version": "1.0.0",
+  "description": "CLI application / mini math games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApricotLace/project-lvl1-s368.git"
+  },
+  "keywords": [
+    "CLI",
+    "JS",
+    "Babel"
+  ],
+  "author": "ApricotLace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApricotLace/project-lvl1-s368/issues"
+  },
+  "homepage": "https://github.com/ApricotLace/project-lvl1-s368#readme"
+}
