@@ -13,6 +13,6 @@ Use lolcat *optionally*.
 [![asciicast](https://asciinema.org/a/dCHZqttoNYUA865FvmzJr3h5a.png)](https://asciinema.org/a/dCHZqttoNYUA865FvmzJr3h5a)
 ## Examples of using
 ### Brain-Even
-A simple game in which you need to answer the question of whether a given number is even.
+A simple game in which you need to answer the question of whether a given number **is even**.
 
 [![asciicast](https://asciinema.org/a/NpFjKi62Sjt66wflAudV3m0CU.png)](https://asciinema.org/a/NpFjKi62Sjt66wflAudV3m0CU)
