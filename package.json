@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "CLI application / mini math games",
   "main": "index.js",
+  "bin": {
+     "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+   "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
