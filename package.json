@@ -2,7 +2,6 @@
   "name": "apricotlace-brain-games",
   "version": "1.1.0",
   "description": "CLI application / mini math games",
-  "main": "index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
