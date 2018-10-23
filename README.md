@@ -8,4 +8,4 @@ A set of mini-games running from the console. These games are similar to what is
 ## Installation
 > `npm install -g apricotlace-brain-games`
 
-[![asciicast](https://asciinema.org/a/ngSauI4smJF7AF8MuXOfxNuSS.png)](https://asciinema.org/a/ngSauI4smJF7AF8MuXOfxNuSS)
+<script id="asciicast-ngSauI4smJF7AF8MuXOfxNuSS" src="https://asciinema.org/a/ngSauI4smJF7AF8MuXOfxNuSS.js" async></script>
