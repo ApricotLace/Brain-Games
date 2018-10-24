@@ -17,17 +17,15 @@ const questionSetter = generateExpression;
 const correctAnswerSetter = (expression) => {
   let tmpNum1 = '';
   let tmpNum2 = '';
-  for (let i = 0; i < expression.length; i += 1) {
-    if (expression[i] === ' ') {
-      break;
-    }
-    tmpNum1 += expression[i];
+  let counter = 0;
+  while (expression[counter] !== ' ') {
+    tmpNum1 += expression[counter];
+    counter += 1;
   }
-  for (let i = expression.length - 1; i > 0; i -= 1) {
-    if (expression[i] === ' ') {
-      break;
-    }
-    tmpNum2 += expression[i];
+  counter = expression.length - 1;
+  while (expression[counter] !== ' ') {
+    tmpNum2 += expression[counter];
+    counter -= 1;
   }
   for (let i = 0; i < expression.length; i += 1) {
     switch (expression[i]) {
