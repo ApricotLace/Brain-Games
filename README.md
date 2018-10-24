@@ -18,6 +18,6 @@ A simple game in which you need to answer the question of whether a given number
 [![asciicast](https://asciinema.org/a/NpFjKi62Sjt66wflAudV3m0CU.png)](https://asciinema.org/a/NpFjKi62Sjt66wflAudV3m0CU)
 
 ### Brain-Calc
-A simple game in which you need to solve an arithmetic task
+A simple game in which you need to solve an **arithmetic** task
 
 [![asciicast](https://asciinema.org/a/Iaq2ldEu2fBSwkAUqXwPZjogw.png)](https://asciinema.org/a/Iaq2ldEu2fBSwkAUqXwPZjogw)
