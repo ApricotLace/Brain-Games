@@ -6,7 +6,7 @@ const maxRandNum = 100;
 const minRandNum = 0;
 const isEven = number => number % 2 === 0;
 const generateRandomNum = () => Math.floor(Math.random() * (maxRandNum - minRandNum)) + minRandNum;
-const correctAnswerSetter = randomNum => (isEven(randomNum) ? 'yes' : 'no');
+const correctAnswerSetter = question => (isEven(question) ? 'yes' : 'no');
 
 const execGame = () => {
   console.log('Welcome to the Brain Games!\nAnswer "yes" if number even otherwise answer "no".\n');
