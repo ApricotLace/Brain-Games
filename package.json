@@ -1,6 +1,6 @@
 {
   "name": "apricotlace-brain-games",
-  "version": "1.3.3",
+  "version": "1.4.3",
   "description": "CLI application / mini math games",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
