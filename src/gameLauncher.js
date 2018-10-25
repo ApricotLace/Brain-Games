@@ -7,6 +7,8 @@ const gameEnd = 3;
 const getQuestion = Game => (car(cdr(Game)));
 const getCorrectAnswer = Game => (cdr(cdr(Game)));
 const getGameDescription = Game => car(Game);
+const getStrRepresentationOfPair = question => car(question);
+const getPair = question => cdr(question);
 
 const sayHi = () => {
   const name = readlineSync.question('May I have your name? ');
@@ -24,8 +26,8 @@ const gameExec = (Game) => {
 
   for (let counter = 0; counter < gameEnd; counter += 1) {
     const question = questionSetter();
-    console.log(`Question: ${question}`);
-    const correctAnswer = correctAnswerSetter(question);
+    console.log(`Question: ${getStrRepresentationOfPair(question)}`);
+    const correctAnswer = correctAnswerSetter(getPair(question));
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${userName}`);
