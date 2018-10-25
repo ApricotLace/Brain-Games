@@ -6,6 +6,7 @@ import {
 const gameEnd = 3;
 const getQuestion = Game => (car(cdr(Game)));
 const getCorrectAnswer = Game => (cdr(cdr(Game)));
+const getGameDescription = Game => car(Game);
 
 const sayHi = () => {
   const name = readlineSync.question('May I have your name? ');
@@ -14,11 +15,11 @@ const sayHi = () => {
 };
 
 const gameExec = (Game) => {
-  const gameRules = `Welcome to the Brain Games!\n${car(Game)}\n`;
+  const gameIntro = `Welcome to the Brain Games!\n${getGameDescription(Game)}\n`;
   const questionSetter = getQuestion(Game);
   const correctAnswerSetter = getCorrectAnswer(Game);
 
-  console.log(gameRules);
+  console.log(gameIntro);
   const userName = sayHi();
 
   for (let counter = 0; counter < gameEnd; counter += 1) {
