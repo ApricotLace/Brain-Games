@@ -5,7 +5,8 @@ import gameExec from '../gameLauncher';
 
 const makeLogic = (question, correctAnswer) => cons(question, correctAnswer);
 const makeGame = (gameDescription, gameLogic) => cons(gameDescription, gameLogic);
-const makeQuestionPair = (pairStringRepresentation, pair) => cons(pairStringRepresentation, pair);
+const makeQuestionPair = (expressionStringRepresentation,
+  expression) => cons(expressionStringRepresentation, expression);
 
 const makeExpressionPair = (number1, number2, sign) => cons(sign, cons(number1, number2));
 const getNumber1 = expressionPair => car(cdr(expressionPair));

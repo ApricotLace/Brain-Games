@@ -6,8 +6,8 @@ import gameExec from '../gameLauncher';
 
 const makeLogic = (question, correctAnswer) => cons(question, correctAnswer);
 const makeGame = (gameDescription, gameLogic) => cons(gameDescription, gameLogic);
-const makeQuestionPair = (pairStringRepresentation,
-  number) => cons(pairStringRepresentation, number);
+const makeQuestionPair = (expressionStringRepresentation,
+  number) => cons(expressionStringRepresentation, number);
 const maxRandNum = 100;
 const minRandNum = 0;
 const generateRandomNum = () => Math.floor(
