@@ -26,3 +26,8 @@ A simple game in which you need to solve an **arithmetic** task
 A simple game in which you need to find the greatest common divisor. **(GCD)**
 
 [![asciicast](https://asciinema.org/a/xEn1ET8TozdKtvaC10PMAq2wv.png)](https://asciinema.org/a/xEn1ET8TozdKtvaC10PMAq2wv)
+
+### Brain-progression
+A simple game in which you need to find the **missing number** in a sequence of numbers
+
+[![asciicast](https://asciinema.org/a/XIJsLkaAAIEv7AgIUEhb5iy3z.png)](https://asciinema.org/a/XIJsLkaAAIEv7AgIUEhb5iy3z)
