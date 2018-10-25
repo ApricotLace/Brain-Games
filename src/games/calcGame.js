@@ -1,9 +1,26 @@
-import { makeLogic, makeGame } from '../makeGame';
-import { generateRandomNum, reverse } from '../constants&functions';
+import {
+  cons,
+} from 'hexlet-pairs';
+import gameExec from '../gameLauncher';
 
-const gameRules = 'What is the result of the expression?';
+const makeLogic = (question, correctAnswer) => cons(question, correctAnswer);
+const makeGame = (gameDescription, gameLogic) => cons(gameDescription, gameLogic);
 const getRandomSign = str => str[Math.floor(Math.random() * (str.length - 0)) + 0];
+const maxRandNum = 25;
+const minRandNum = 0;
+const generateRandomNum = () => Math.floor(
+  Math.random() * (maxRandNum - minRandNum),
+) + minRandNum;
+const reverse = (str) => {
+  const len = str.length;
+  if (len === 0) {
+    return str;
+  }
 
+  return str[len - 1] + reverse(str.substr(0, len - 1));
+};
+
+const gameDescription = 'What is the result of the expression?';
 const generateExpression = () => {
   const signsStr = '+-*';
   const sign = getRandomSign(signsStr);
@@ -13,7 +30,6 @@ const generateExpression = () => {
   return expression;
 };
 
-const questionSetter = generateExpression;
 const correctAnswerSetter = (expression) => {
   let tmpNum1 = '';
   let tmpNum2 = '';
@@ -41,5 +57,7 @@ const correctAnswerSetter = (expression) => {
   return console.log('Whoooops, something goes wrong!');
 };
 
-const Game = makeGame(gameRules, makeLogic(questionSetter, correctAnswerSetter));
-export default Game;
+const Game = makeGame(gameDescription, makeLogic(generateExpression, correctAnswerSetter));
+const launchGame = () => gameExec(Game);
+
+export default launchGame;
