@@ -1,8 +1,9 @@
 import { getRandomNum, game, makeQuestionAnswerPair } from '../utils';
 import gameExec from '../gameLauncher';
 
-const minNum = 0;
+const minNum = 1;
 const maxNum = 100;
+
 const isEven = number => number % 2 === 0;
 
 const gameDescription = 'Answer "yes" if number even otherwise answer "no".';

@@ -4,8 +4,9 @@ import {
 import { getRandomNum, game, makeQuestionAnswerPair } from '../utils';
 import gameExec from '../gameLauncher';
 
-const minNum = 0;
+const minNum = 1;
 const maxNum = 50;
+
 const gcd = (number1, number2) => (number2 ? gcd(number2, number1 % number2) : number1);
 const makeNumberPair = (number1, number2) => cons(number1, number2);
 const getNumber1 = numbPair => car(numbPair);

@@ -4,8 +4,9 @@ import {
 import { getRandomNum, game, makeQuestionAnswerPair } from '../utils';
 import gameExec from '../gameLauncher';
 
+const minNum = 1;
 const maxNum = 15;
-const minNum = 0;
+
 const getRandomSign = str => str[Math.floor(Math.random() * (str.length - 0)) + 0];
 const makeExpressionPair = (number1, number2, sign) => cons(sign, cons(number1, number2));
 const getNum1 = expressionPair => car(cdr(expressionPair));
