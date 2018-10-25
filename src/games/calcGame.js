@@ -1,52 +1,35 @@
 import {
   car, cdr, cons,
 } from 'hexlet-pairs';
+import { getRandomNum, game, makeQuestionAnswerPair } from '../utils';
 import gameExec from '../gameLauncher';
 
-const makeLogic = (question, correctAnswer) => cons(question, correctAnswer);
-const makeGame = (gameDescription, gameLogic) => cons(gameDescription, gameLogic);
-const makeQuestionPair = (expressionStringRepresentation,
-  expression) => cons(expressionStringRepresentation, expression);
-
-const makeExpressionPair = (number1, number2, sign) => cons(sign, cons(number1, number2));
-const getNumber1 = expressionPair => car(cdr(expressionPair));
-const getNumber2 = expressionPair => cdr(cdr(expressionPair));
-const getSign = expressionPair => car(expressionPair);
+const maxNum = 15;
+const minNum = 0;
 const getRandomSign = str => str[Math.floor(Math.random() * (str.length - 0)) + 0];
-const maxRandNum = 25;
-const minRandNum = 0;
-const generateRandomNum = () => Math.floor(
-  Math.random() * (maxRandNum - minRandNum),
-) + minRandNum;
-const reverse = (str) => {
-  const len = str.length;
-  if (len === 0) {
-    return str;
-  }
-
-  return str[len - 1] + reverse(str.substr(0, len - 1));
-};
+const makeExpressionPair = (number1, number2, sign) => cons(sign, cons(number1, number2));
+const getNum1 = expressionPair => car(cdr(expressionPair));
+const getNum2 = expressionPair => cdr(cdr(expressionPair));
+const getSign = expressionPair => car(expressionPair);
 
 const gameDescription = 'What is the result of the expression?';
-const generateQuestion = () => {
-  const Expression = makeExpressionPair(generateRandomNum(), generateRandomNum(), getRandomSign('+-*'));
-  return makeQuestionPair(`${getNumber1(Expression)} ${getSign(Expression)} ${getNumber2(Expression)}`, Expression);
-};
-
 const correctAnswerSetter = (question) => {
   switch (getSign(question)) {
     case '+':
-      return String(getNumber1(question) + getNumber2(question));
+      return String(getNum1(question) + getNum2(question));
     case '-':
-      return String(getNumber1(question) - getNumber2(question));
+      return String(getNum1(question) - getNum2(question));
     case '*':
-      return String(getNumber1(question) * getNumber2(question));
+      return String(getNum1(question) * getNum2(question));
     default:
   }
   return console.log('Whooooops, something goes wrong?');
 };
+const generateQuestionAnswerPair = () => {
+  const expression = makeExpressionPair(getRandomNum(minNum, maxNum), getRandomNum(minNum, maxNum), getRandomSign('+-*'));
+  return makeQuestionAnswerPair(`${getNum1(expression)} ${getSign(expression)} ${getNum2(expression)}`, correctAnswerSetter(expression));
+};
 
-const Game = makeGame(gameDescription, makeLogic(generateQuestion, correctAnswerSetter));
-const launchGame = () => gameExec(Game);
+const launchGame = () => gameExec(game(gameDescription, generateQuestionAnswerPair));
 
 export default launchGame;

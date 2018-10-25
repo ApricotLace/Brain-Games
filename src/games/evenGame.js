@@ -1,28 +1,17 @@
-import {
-  cons,
-} from 'hexlet-pairs';
+import { getRandomNum, game, makeQuestionAnswerPair } from '../utils';
 import gameExec from '../gameLauncher';
 
-
-const makeLogic = (question, correctAnswer) => cons(question, correctAnswer);
-const makeGame = (gameDescription, gameLogic) => cons(gameDescription, gameLogic);
-const makeQuestionPair = (expressionStringRepresentation,
-  number) => cons(expressionStringRepresentation, number);
-const maxRandNum = 100;
-const minRandNum = 0;
-const generateRandomNum = () => Math.floor(
-  Math.random() * (maxRandNum - minRandNum),
-) + minRandNum;
+const minNum = 0;
+const maxNum = 100;
 const isEven = number => number % 2 === 0;
 
 const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
-const generateQuestion = () => {
-  const number = generateRandomNum();
-  return makeQuestionPair(`${number}`, number);
-};
 const correctAnswerSetter = question => (isEven(question) ? 'yes' : 'no');
+const generateQuestionAnswerPair = () => {
+  const number = getRandomNum(minNum, maxNum);
+  return makeQuestionAnswerPair(`${number}`, correctAnswerSetter(number));
+};
 
-const Game = makeGame(gameDescription, makeLogic(generateQuestion, correctAnswerSetter));
-const launchGame = () => gameExec(Game);
+const launchGame = () => gameExec(game(gameDescription, generateQuestionAnswerPair));
 
 export default launchGame;
