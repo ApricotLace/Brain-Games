@@ -21,3 +21,8 @@ A simple game in which you need to answer the question of whether a given number
 A simple game in which you need to solve an **arithmetic** task
 
 [![asciicast](https://asciinema.org/a/Iaq2ldEu2fBSwkAUqXwPZjogw.png)](https://asciinema.org/a/Iaq2ldEu2fBSwkAUqXwPZjogw)
+
+### Brain-gcd
+A simple game in which you need to find the greatest common divisor. **(GCD)**
+
+[![asciicast](https://asciinema.org/a/xEn1ET8TozdKtvaC10PMAq2wv.png)](https://asciinema.org/a/xEn1ET8TozdKtvaC10PMAq2wv)
