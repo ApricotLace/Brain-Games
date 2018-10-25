@@ -1,10 +1,16 @@
 import {
-  cons,
+  car, cdr, cons,
 } from 'hexlet-pairs';
 import gameExec from '../gameLauncher';
 
 const makeLogic = (question, correctAnswer) => cons(question, correctAnswer);
 const makeGame = (gameDescription, gameLogic) => cons(gameDescription, gameLogic);
+const makeQuestionPair = (pairStringRepresentation, pair) => cons(pairStringRepresentation, pair);
+
+const makeExpressionPair = (number1, number2, sign) => cons(sign, cons(number1, number2));
+const getNumber1 = expressionPair => car(cdr(expressionPair));
+const getNumber2 = expressionPair => cdr(cdr(expressionPair));
+const getSign = expressionPair => car(expressionPair);
 const getRandomSign = str => str[Math.floor(Math.random() * (str.length - 0)) + 0];
 const maxRandNum = 25;
 const minRandNum = 0;
@@ -21,43 +27,25 @@ const reverse = (str) => {
 };
 
 const gameDescription = 'What is the result of the expression?';
-const generateExpression = () => {
-  const signsStr = '+-*';
-  const sign = getRandomSign(signsStr);
-  const number1 = generateRandomNum();
-  const number2 = generateRandomNum();
-  const expression = `${number1} ${sign} ${number2}`;
-  return expression;
+const generateQuestion = () => {
+  const Expression = makeExpressionPair(generateRandomNum(), generateRandomNum(), getRandomSign('+-*'));
+  return makeQuestionPair(`${getNumber1(Expression)} ${getSign(Expression)} ${getNumber2(Expression)}`, Expression);
 };
 
-const correctAnswerSetter = (expression) => {
-  let tmpNum1 = '';
-  let tmpNum2 = '';
-  let counter = 0;
-  while (expression[counter] !== ' ') {
-    tmpNum1 += expression[counter];
-    counter += 1;
+const correctAnswerSetter = (question) => {
+  switch (getSign(question)) {
+    case '+':
+      return String(getNumber1(question) + getNumber2(question));
+    case '-':
+      return String(getNumber1(question) - getNumber2(question));
+    case '*':
+      return String(getNumber1(question) * getNumber2(question));
+    default:
   }
-  counter = expression.length - 1;
-  while (expression[counter] !== ' ') {
-    tmpNum2 += expression[counter];
-    counter -= 1;
-  }
-  for (let i = 0; i < expression.length; i += 1) {
-    switch (expression[i]) {
-      case '+':
-        return String(Number(tmpNum1) + Number(reverse(tmpNum2)));
-      case '-':
-        return String(Number(tmpNum1) - Number(reverse(tmpNum2)));
-      case '*':
-        return String(Number(tmpNum1) * Number(reverse(tmpNum2)));
-      default:
-    }
-  }
-  return console.log('Whoooops, something goes wrong!');
+  return console.log('Whooooops, something goes wrong?');
 };
 
-const Game = makeGame(gameDescription, makeLogic(generateExpression, correctAnswerSetter));
+const Game = makeGame(gameDescription, makeLogic(generateQuestion, correctAnswerSetter));
 const launchGame = () => gameExec(Game);
 
 export default launchGame;
