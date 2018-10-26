@@ -31,3 +31,8 @@ A simple game in which you need to find the greatest common divisor. **(GCD)**
 A simple game in which you need to find the **missing number** in a sequence of numbers
 
 [![asciicast](https://asciinema.org/a/XIJsLkaAAIEv7AgIUEhb5iy3z.png)](https://asciinema.org/a/XIJsLkaAAIEv7AgIUEhb5iy3z)
+
+### Brain-prime
+A simple game in which you need to answer the question of whether a given number **is prime**.
+
+[![asciicast](https://asciinema.org/a/Own25xb4rjOI34HvkhjzGyGua.png)](https://asciinema.org/a/Own25xb4rjOI34HvkhjzGyGua)
