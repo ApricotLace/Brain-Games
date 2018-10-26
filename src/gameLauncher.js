@@ -14,12 +14,14 @@ const sayHi = () => {
 };
 
 const gameExec = (gameDescription, generateQuestionAnswerPair) => {
-  console.log(`Welcome to the Brain Games!\n${gameDescription}\n`);
+  console.log('Welcome to the Brain Games!');
+  console.log(gameDescription);
   const userName = sayHi();
   for (let counter = 0; counter < gameEnd; counter += 1) {
-    const qaPair = generateQuestionAnswerPair();
-    console.log(`Question: ${getQuestion(qaPair)}`);
-    const correctAnswer = getAnswer(qaPair);
+    const questionAndAnswer = generateQuestionAnswerPair();
+    const question = getQuestion(questionAndAnswer);
+    const correctAnswer = getAnswer(questionAndAnswer);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${userName}`);

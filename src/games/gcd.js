@@ -1,7 +1,7 @@
 import {
   cons,
 } from 'hexlet-pairs';
-import getRandomNum from '../utils';
+import { getRandomNum } from '../utils';
 import gameExec from '../gameLauncher';
 
 const minRandNum = 1;
@@ -16,6 +16,4 @@ const generateQuestionAnswerPair = () => {
   return cons(`${number1} ${number2}`, correctAnswerSetter(number1, number2));
 };
 
-const launchGame = () => gameExec(gameDescription, generateQuestionAnswerPair);
-
-export default launchGame;
+export default () => gameExec(gameDescription, generateQuestionAnswerPair);
