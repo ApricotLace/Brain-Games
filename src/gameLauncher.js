@@ -4,8 +4,6 @@ import {
 } from 'hexlet-pairs';
 
 const gameEnd = 3;
-const getGameDescription = Game => car(Game);
-const generatePairOfQandA = Game => cdr(Game)();
 const getQuestion = qaPair => car(qaPair);
 const getAnswer = qaPair => cdr(qaPair);
 
@@ -15,12 +13,11 @@ const sayHi = () => {
   return name;
 };
 
-const gameExec = (Game) => {
-  const gameIntro = `Welcome to the Brain Games!\n${getGameDescription(Game)}\n`;
-  console.log(gameIntro);
+const gameExec = (gameDescription, generateQuestionAnswerPair) => {
+  console.log(`Welcome to the Brain Games!\n${gameDescription}\n`);
   const userName = sayHi();
   for (let counter = 0; counter < gameEnd; counter += 1) {
-    const qaPair = generatePairOfQandA(Game);
+    const qaPair = generateQuestionAnswerPair();
     console.log(`Question: ${getQuestion(qaPair)}`);
     const correctAnswer = getAnswer(qaPair);
     const userAnswer = readlineSync.question('Your answer: ');
