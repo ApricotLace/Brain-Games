@@ -26,7 +26,6 @@ const generateQuestionAnswerPair = () => {
       sequence += `${firstElement + counter * step} `;
     }
   }
-  
   return cons(sequence, correctAnswerSetter(missingNumber));
 };
 
