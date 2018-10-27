@@ -15,13 +15,12 @@ const generateQuestionAnswerPair = () => {
   const firstElement = getRandomNum(minRandNum, maxRandNum);
   const step = getRandomNum(minRandNum, maxRandNum);
   const missingNumberIndex = getRandomNum(sequenceBegin, sequenceEnd);
+  const missingNumber = firstElement + missingNumberIndex * step;
   let sequence = '';
-  let missingNumber = 0;
 
   for (let counter = sequenceBegin; counter < sequenceEnd; counter += 1) {
     if (counter === missingNumberIndex) {
       sequence += '.. ';
-      missingNumber = firstElement + counter * step;
     } else {
       sequence += `${firstElement + counter * step} `;
     }
