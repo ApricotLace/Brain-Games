@@ -8,7 +8,7 @@ A set of mini-games running from the console. These games are similar to what is
 ## Installation
 > `npm install -g apricotlace-brain-games`
 
-Use lolcat *optionally*.    :^)
+Use lolcat *optionally*    :^)
 
 [![asciicast](https://asciinema.org/a/dCHZqttoNYUA865FvmzJr3h5a.png)](https://asciinema.org/a/dCHZqttoNYUA865FvmzJr3h5a)
 ## Examples of using
