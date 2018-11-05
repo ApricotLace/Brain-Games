@@ -1,5 +1,5 @@
 # 🎲 Brain Games
-[![Build Status](https://travis-ci.org/ApricotLace/project-lvl1-s368.svg?branch=master)](https://travis-ci.org/ApricotLace/project-lvl1-s368)
+[![Build Status](https://travis-ci.org/ApricotLace/Brain-Games.svg?branch=master)](https://travis-ci.org/ApricotLace/Brain-Games)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0eaff3cdf9c385f97b8d/maintainability)](https://codeclimate.com/github/ApricotLace/project-lvl1-s368/maintainability)
 
 **CLI Application**
